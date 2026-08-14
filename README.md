@@ -1,75 +1,53 @@
-# Cancer Type Prediction using Deep Learning
-![GitHub Repo stars](https://img.shields.io/github/stars/Uni-Creator/LungCancerClassification?style=social)  ![GitHub forks](https://img.shields.io/github/forks/Uni-Creator/LungCancerClassification?style=social)
+# AI-Based Cancer Type Detection using Deep Learning
 
-This repository contains a deep learning-based cancer type prediction system using a trained convolutional neural network (CNN). The model is deployed using Streamlit, allowing users to upload medical images and receive predictions with a probability distribution displayed in a pie chart.
+## Project Description
+
+An AI-based deep learning system for classifying cancer types from histopathology images using a Convolutional Neural Network (CNN). The model is integrated with a Streamlit web application for real-time image prediction and visualization.
+
+## Technologies Used
+
+- Python
+- TensorFlow
+- Keras
+- CNN
+- Streamlit
+- NumPy
+- Matplotlib
 
 ## Features
 
-- Upload an image of a tissue sample.
-- Get real-time cancer type predictions.
-- Visual representation of prediction probabilities using a pie chart.
-- Uses a trained CNN model (`Model.h5`).
+- Upload histopathology images for prediction
+- Real-time cancer type classification
+- Displays prediction confidence
+- Visualizes class probabilities
+- Interactive Streamlit web interface
 
 ## Cancer Types Detected
 
-The model predicts five types of tissue conditions:
+The model classifies images into five categories:
 
-- **Colon Adenocarcinoma**
-- **Colon Benign Tissue**
-- **Lung Adenocarcinoma**
-- **Lung Benign Tissue**
-- **Lung Squamous Cell Carcinoma**
+1. Colon Adenocarcinoma
+2. Colon Benign Tissue
+3. Lung Adenocarcinoma
+4. Lung Benign Tissue
+5. Lung Squamous Cell Carcinoma
 
-## Requirements
+## Model
 
-Ensure you have Python installed along with the following dependencies:
+The project uses a trained CNN model for image classification.
 
-```bash
-pip install streamlit tensorflow numpy matplotlib
-```
+The input image is resized to 224 × 224 pixels and normalized before prediction.
+
+## Project Files
+
+- `main.py` – Streamlit application for cancer type prediction
+- `trainer.ipynb` – Model training and evaluation notebook
+- `confusion_matrix.png` – Confusion matrix showing model classification results
+- `README.md` – Project documentation
 
 ## How to Run
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Uni-Creator/LungCancerClassification.git
-   cd LungCancerClassification
-   ```
-2. Place the trained model file (`Model.h5`) in the project directory.
-3. Run the application:
-   ```bash
-   streamlit run main.py
-   ```
-4. Open the provided local URL in your web browser.
+### 1. Install required libraries
 
-## File Descriptions
-
-- **`main.py`**: Contains the Streamlit-based web app for cancer type prediction.
-- **`README.md`**: Documentation for setting up and using the project.
-- **`lung_colon_image_set`**: Contains about 2% of the original data. You can download the full dataset from: [LC25000 Dataset](https://academictorrents.com/details/7a638ed187a6180fd6e464b3666a6ea0499af4af).
-
-## Usage
-
-1. Upload an image (JPEG only).
-2. The system will process the image and predict the cancer type probabilities.
-3. The results will be displayed in a table along with a pie chart visualization.
-
-## Example Output
-
-- **Prediction Probabilities:**
-  - Colon Adenocarcinoma: 90.0%
-  - Colon Benign Tissue: 10.0%
-  - Lung Adenocarcinoma: 0.0%
-  - Lung Benign Tissue: 0.0%
-  - Lung Squamous Cell Carcinoma: 0.0%
-
-## License
-
-This project is open-source. Feel free to modify and improve it!
-
-## Acknowledgments
-
-- TensorFlow for deep learning.
-- Streamlit for interactive UI development.
-- Medical image datasets used for training the model.
-
+```bash
+pip install streamlit tensorflow numpy matplotlib pillow
